@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour {
     public static GameObject ObjectDeath;
     // Use this for initialization
     void Start () {
-        defaultNote = GameObject.Find("Note");
-        ObjectDeath = GameObject.Find("CollisionDeath");
+        defaultNote = Resources.Load<GameObject>("Note");
         defaultNote.SetActive(false);
+        ObjectDeath = GameObject.Find("CollisionDeath");
         //CloneNote(MovementHandler.Tracks.Down);
         //CloneNote(MovementHandler.Tracks.Up);
         //CloneNote(MovementHandler.Tracks.Right);
