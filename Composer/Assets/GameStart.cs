@@ -15,7 +15,7 @@ public class GameStart : MonoBehaviour {
 	}
     public void StartGame ()
     {
-        Application.LoadLevel ("Game");
+        Application.LoadLevel ("Story");
     }
     public void ExitGame ()
     {
