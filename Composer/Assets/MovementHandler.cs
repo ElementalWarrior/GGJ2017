@@ -3,7 +3,8 @@ using System.Collections;
 
 public class MovementHandler : MonoBehaviour
 {
-
+    public Vector3 direction;
+    public float Speed = 0.05f;
     // Use this for initialization
     void Start()
     {
@@ -13,23 +14,22 @@ public class MovementHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3(0f, 0f, 0f);
-        switch(Track)
-        {
-            case Tracks.Up:
-                direction.y = -0.1f;
-                break;
-            case Tracks.Right:
-                direction.x = 0.1f;
-                break;
-            case Tracks.Down:
-                direction.y = 0.1f;
-                break;
-            case Tracks.Left:
-                direction.x = -0.1f;
-                break;
-        }
-        gameObject.transform.position += direction;
+        //switch(Track)
+        //{
+        //    case Tracks.Up:
+        //        direction.y = -0.1f;
+        //        break;
+        //    case Tracks.Right:
+        //        direction.x = 0.1f;
+        //        break;
+        //    case Tracks.Down:
+        //        direction.y = 0.1f;
+        //        break;
+        //    case Tracks.Left:
+        //        direction.x = -0.1f;
+        //        break;
+        //}
+        gameObject.transform.position += direction * Speed;
 
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +39,6 @@ public class MovementHandler : MonoBehaviour
             GameObject.Destroy(this.gameObject);
         }
     }
-    public enum Tracks { Up, Right, Down, Left} 
-    public Tracks Track { get; set; }
+    //public enum Tracks { Up, Right, Down, Left} 
+    //public Tracks Track { get; set; }
 }
