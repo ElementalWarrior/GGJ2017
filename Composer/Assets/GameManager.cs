@@ -6,14 +6,15 @@ public class GameManager : MonoBehaviour {
 
 
     GameObject defaultNote;
+    public static GameObject ObjectDeath;
     // Use this for initialization
     void Start () {
         defaultNote = GameObject.Find("Note");
+        ObjectDeath = GameObject.Find("CollisionDeath");
         defaultNote.SetActive(false);
-        CloneNote(MovementHandler.Tracks.Down);
-        CloneNote(MovementHandler.Tracks.Left);
-        CloneNote(MovementHandler.Tracks.Up);
-        CloneNote(MovementHandler.Tracks.Right);
+        //CloneNote(MovementHandler.Tracks.Down);
+        //CloneNote(MovementHandler.Tracks.Up);
+        //CloneNote(MovementHandler.Tracks.Right);
     }
     public void CloneNote(MovementHandler.Tracks direction)
     {
@@ -40,6 +41,18 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            CloneNote(MovementHandler.Tracks.Left);
+        }else if(Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            CloneNote(MovementHandler.Tracks.Right);
+        } else if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            CloneNote(MovementHandler.Tracks.Up);
+        } else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            CloneNote(MovementHandler.Tracks.Down);
+        }
+    }
 }
