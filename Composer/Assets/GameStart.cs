@@ -21,9 +21,12 @@ public class GameStart : MonoBehaviour {
     {
         Application.Quit();
     }
-    void Options ()
+    public void Options ()
     {
-
+        Application.LoadLevel ("Options");
     }
-
+    public void Credits()
+    {
+        Application.LoadLevel ("Credits");
+    }
 }
