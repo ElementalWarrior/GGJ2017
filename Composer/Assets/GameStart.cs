@@ -13,11 +13,11 @@ public class GameStart : MonoBehaviour {
 	void Update () {
 		
 	}
-    void StartGame ()
+    public void StartGame ()
     {
         Application.LoadLevel ("Game");
     }
-    void ExitGame ()
+    public void ExitGame ()
     {
         Application.Quit();
     }
