@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour {
         CloneNote(MovementHandler.Tracks.Left);
         CloneNote(MovementHandler.Tracks.Up);
         CloneNote(MovementHandler.Tracks.Right);
-        //_note.GetComponent<MovementHandler>().transform.position = ;
     }
     public void CloneNote(MovementHandler.Tracks direction)
     {
