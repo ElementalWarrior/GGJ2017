@@ -49,10 +49,10 @@ public class GameManager : MonoBehaviour {
             CloneNote(MovementHandler.Tracks.Right);
         } else if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            CloneNote(MovementHandler.Tracks.Up);
+            CloneNote(MovementHandler.Tracks.Down);
         } else if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-            CloneNote(MovementHandler.Tracks.Down);
+            CloneNote(MovementHandler.Tracks.Up);
         }
     }
 }
