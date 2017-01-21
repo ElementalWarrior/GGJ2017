@@ -405,8 +405,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchoredPosition: {x: -198, y: 112}
-  m_SizeDelta: {x: 158, y: 30}
 --- !u!1 &1179206037
 GameObject:
   m_ObjectHideFlags: 0
