@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour {
         //resize camera bounds so we remove waves after they leave the viewport
         collider.size = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelRect.width, Camera.main.pixelRect.height, 0)) - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0));
 
+        if(ApplicationSettings.Instance().GameSong != null)
+        {
+            GameObject.Find("music").GetComponent<AudioSource>().clip = ApplicationSettings.Instance().GameSong;
+            GameObject.Find("music").GetComponent<AudioSource>().Play();
+        }
     }
     public static GameManager Instance()
     {

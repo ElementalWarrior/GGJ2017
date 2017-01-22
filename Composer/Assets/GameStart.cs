@@ -27,6 +27,10 @@ public class GameStart : MonoBehaviour {
     public void StartGame ()
     {
         SceneManager.LoadScene("Story");
+        DontDestroyOnLoad(GameObject.Find("easySong"));
+        DontDestroyOnLoad(GameObject.Find("mediumSong"));
+        DontDestroyOnLoad(GameObject.Find("hardSong"));
+        DontDestroyOnLoad(GameObject.Find("infiniteSong"));
     }
     public void ExitGame ()
     {
@@ -44,6 +48,7 @@ public class GameStart : MonoBehaviour {
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.01F;
+        ApplicationSettings.Instance().GameSong = GameObject.Find("infiniteSong").GetComponent<AudioSource>().clip;
         inf = true;
     }
     public void Easy()
@@ -51,6 +56,7 @@ public class GameStart : MonoBehaviour {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed=0.01F;
         inf = false;
+        ApplicationSettings.Instance().GameSong = GameObject.Find("easySong").GetComponent<AudioSource>().clip;
     }
     public void Medium()
     {
@@ -58,6 +64,7 @@ public class GameStart : MonoBehaviour {
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
         inf = false;
         lvl = 2;
+        ApplicationSettings.Instance().GameSong = GameObject.Find("mediumSong").GetComponent<AudioSource>().clip;
     }
     public void Hard()
     {
@@ -65,6 +72,7 @@ public class GameStart : MonoBehaviour {
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
         inf = false;
         lvl = 3;
+        ApplicationSettings.Instance().GameSong = GameObject.Find("hardSong").GetComponent<AudioSource>().clip;
     }
     public void Back()
     {

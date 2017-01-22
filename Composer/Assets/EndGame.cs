@@ -4,21 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 [RequireComponent(typeof(AudioSource))]
 public class EndGame : MonoBehaviour {
-    public AudioSource audio;
-    public AudioSource audioeasy;
-    public AudioSource audiomed;
-    public AudioSource audiohard;
     void Start()
     {
         if (GameStart.inf)
         {
-            audio.loop = true;
+            GameObject.Find("music").GetComponent<AudioSource>().loop = true;
+        } else
+        {
+            GameObject.Find("music").GetComponent<AudioSource>().loop = false;
         }
     }
 
     void Update()
     {
-       if (!audio.isPlaying && !audioeasy.isPlaying && !audiomed.isPlaying && !audiohard.isPlaying)
+        GameObject music = GameObject.Find("music");
+        AudioSource aSource = music.GetComponent<AudioSource>();
+       if (!aSource.isPlaying)
         {
             Application.LoadLevel("Win");
         }

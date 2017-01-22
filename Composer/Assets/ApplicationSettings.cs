@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ApplicationSettings {
 
     private static ApplicationSettings _instance;
+    public AudioClip GameSong = null;
     public string Name;
     //private void Awake()
     //{
