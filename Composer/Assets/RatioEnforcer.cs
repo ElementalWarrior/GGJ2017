@@ -69,7 +69,7 @@ public class RatioEnforcer : MonoBehaviour {
                 Debug.Log(buttonSlug);
                 Joysticks[joyNum][buttonSlug] = true;
             }
-            catch (Exception e) //if it throws an exception, then the button doesn't exist
+            catch (Exception) //if it throws an exception, then the button doesn't exist
             {
                 break;
             }
