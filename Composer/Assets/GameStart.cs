@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
     public static bool inf=false;
+    public static int lvl = 1;
     private static GameStart _instance = null;
 
 	// Use this for initialization
@@ -56,12 +57,14 @@ public class GameStart : MonoBehaviour {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
         inf = false;
+        lvl = 2;
     }
     public void Hard()
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
         inf = false;
+        lvl = 3;
     }
     public void Back()
     {
