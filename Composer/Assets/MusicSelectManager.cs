@@ -13,6 +13,7 @@ public class MusicSelectManager : MonoBehaviour {
     void Start()
     {
         GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
+        GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onHover();
     }
 
     // Update is called once per frame
@@ -106,7 +107,8 @@ public class MusicSelectManager : MonoBehaviour {
                 //var foo = obj.GetComponentsInChildren(typeof(Component));
                 obj.GetComponentInChildren<AudioHover>().onExit();
             }
-            if(menuPosition > 9)
+            GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onExit();
+            if (menuPosition > 9)
             {
                 GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
                 GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onHover();
