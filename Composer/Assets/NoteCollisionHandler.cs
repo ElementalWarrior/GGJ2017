@@ -35,6 +35,14 @@ public class NoteCollisionHandler : MonoBehaviour
                 GameObject.Destroy(GameManager.Instance().heart2);
             }
 
+            GameObject duplicatedSounds = Instantiate(GameObject.Find("ComposerHit"));
+            AudioSource aSource = duplicatedSounds.GetComponent<AudioSource>();
+            aSource.Play();
+            StartCoroutine(DestroyGameObject(duplicatedSounds));
         }
+    }
+    IEnumerator DestroyGameObject(GameObject obj) {
+        yield return new WaitForSeconds(obj.GetComponent<AudioSource>().clip.length);
+        GameObject.Destroy(obj);
     }
 }
