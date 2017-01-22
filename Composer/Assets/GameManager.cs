@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-
+  
+    public static int Score = 0;
     public GameObject heart0;
     public GameObject heart1;
     public GameObject heart2;
