@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class NoteCollisionHandler : MonoBehaviour
 {
@@ -9,20 +10,31 @@ public class NoteCollisionHandler : MonoBehaviour
         if (collision.gameObject == GameManager.ObjectDeath)
         {
             GameObject.Destroy(this.gameObject);
-<<<<<<< HEAD
+            GameManager.Instance().NumNotes--;
             GameManager.NumHearts -= 1;
             if (GameManager.NumHearts == 0)
             {
-                Application.LoadLevel("MusicSelection");
+<<<<<<< HEAD
+                Application.LoadLevel("Lose");
+                
+=======
+                SceneManager.LoadScene("MusicSelection");
+>>>>>>> d055ab418121bb5113574760647b7b977f0d774e
             }
-            if (GameManager.NumHearts == 3)
+            if (GameManager.NumHearts == 2)
             {
-               
+                GameObject.Destroy(GameManager.Instance().heart0);
+            }
+            if (GameManager.NumHearts == 1)
+            {
+                GameObject.Destroy(GameManager.Instance().heart1);
             }
 
-=======
-            GameManager.Instance().NumNotes--;
->>>>>>> b1923b83c32e21fb0b6aab8dfdc4a2c601a495de
+            if (GameManager.NumHearts == 0)
+            {
+                GameObject.Destroy(GameManager.Instance().heart2);
+            }
+
         }
     }
 }
