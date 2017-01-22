@@ -29,14 +29,14 @@ public class ImageHandler : MonoBehaviour {
                 keyPressed = true;
             }
         }
-		 if(ComicNum < 8 && (keyPressed || _counter >= 5))
+		 if(ComicNum < 11 && (keyPressed || _counter >= 4))
         {
         	ComicNum++;
             Sprite tex = Resources.Load<Sprite>("comic_0" + ComicNum);
             this.gameObject.GetComponent<SpriteRenderer>().sprite = tex;
             _counter = 0;
 
-        } else if (ComicNum >= 8 && (keyPressed || _counter >= 5)) 
+        } else if (ComicNum >= 11 && (keyPressed || _counter >= 4)) 
         {
             
             SceneManager.LoadScene("MusicSelection");
