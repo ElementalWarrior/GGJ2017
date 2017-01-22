@@ -49,16 +49,19 @@ public class GameStart : MonoBehaviour {
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed=0.01F;
+        inf = false;
     }
     public void Medium()
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
+        inf = false;
     }
     public void Hard()
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
+        inf = false;
     }
     public void Back()
     {
