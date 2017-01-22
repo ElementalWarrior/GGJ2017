@@ -36,8 +36,19 @@ public class Spawner : MonoBehaviour {
     }
     public GameObject Spawn(GameManager.NoteColor color)
     {
+        if(objectToSpawn == null)
+        {
+            return null;
+        }
         GameObject newNote = GameObject.Instantiate(objectToSpawn, this.transform.position, new Quaternion());
         newNote.tag = color.ToString();
+        if(objectToSpawn.name.IndexOf("Note") == 0)
+        {
+            GameManager.Instance().NumNotes++;
+        } else if (objectToSpawn.name.IndexOf("Wave") == 0)
+        {
+            GameManager.Instance().NumWaves++;
+        }
         switch (color)
         {
             case GameManager.NoteColor.Blue:
