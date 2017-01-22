@@ -1,0 +1,28 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class NoteCollisionHandler : MonoBehaviour
+{
+    
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject == GameManager.ObjectDeath)
+        {
+            GameObject.Destroy(this.gameObject);
+<<<<<<< HEAD
+            GameManager.NumHearts -= 1;
+            if (GameManager.NumHearts == 0)
+            {
+                Application.LoadLevel("MusicSelection");
+            }
+            if (GameManager.NumHearts == 3)
+            {
+               
+            }
+
+=======
+            GameManager.Instance().NumNotes--;
+>>>>>>> b1923b83c32e21fb0b6aab8dfdc4a2c601a495de
+        }
+    }
+}

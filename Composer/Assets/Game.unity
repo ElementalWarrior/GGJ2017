@@ -153,7 +153,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374809998
 GameObject:
@@ -644,7 +644,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &935112630
 Transform:
   m_ObjectHideFlags: 0
@@ -750,7 +750,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005594334
 GameObject:
@@ -797,7 +797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115750951
 GameObject:
@@ -831,7 +831,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -382.4, y: 316.1}
+  m_AnchoredPosition: {x: -134, y: 134}
   m_SizeDelta: {x: 158, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115750953
@@ -1075,7 +1075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1353163209
 MonoBehaviour:
@@ -1193,6 +1193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4355b4d8af31943aad480b9980b885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heart0: {fileID: 150095804}
+  heart1: {fileID: 1615669262}
+  heart2: {fileID: 1940127016}
   WaveSpawnerLeft: {fileID: 1353163209}
   WaveSpawnerRight: {fileID: 1005594335}
   WaveSpawnerDown: {fileID: 974463064}
@@ -1361,12 +1364,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1615669262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.5, y: -4.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1617674016
 GameObject:
@@ -1482,7 +1485,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &1774218087
 Transform:
   m_ObjectHideFlags: 0
@@ -1721,7 +1724,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &2095539755
 Transform:
   m_ObjectHideFlags: 0
