@@ -184,7 +184,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -373,10 +373,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 1
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -831,8 +831,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -134, y: 134}
-  m_SizeDelta: {x: 158, y: 30}
+  m_AnchoredPosition: {x: -392, y: 311.1}
+  m_SizeDelta: {x: 158, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1115750953
 MonoBehaviour:
@@ -855,12 +855,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
+    m_MaxSize: 68
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1175,6 +1175,7 @@ GameObject:
   - component: {fileID: 1407020382}
   - component: {fileID: 1407020383}
   - component: {fileID: 1407020384}
+  - component: {fileID: 1407020385}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1307,6 +1308,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d765122a75f36a742b3382b31c939da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1407020385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407020375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d2ab2b10fca984ca9e39c9719b871d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 374809999}
 --- !u!1 &1615669262
 GameObject:
   m_ObjectHideFlags: 0
