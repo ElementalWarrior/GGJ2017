@@ -530,7 +530,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917335067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -602,7 +602,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 0
+  UseTimer: 1
 --- !u!4 &935112630
 Transform:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 0
+  UseTimer: 1
 --- !u!4 &1246405286
 Transform:
   m_ObjectHideFlags: 0
@@ -1277,7 +1277,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 0
+  UseTimer: 1
 --- !u!4 &1774218087
 Transform:
   m_ObjectHideFlags: 0
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 0
+  UseTimer: 1
 --- !u!4 &2095539755
 Transform:
   m_ObjectHideFlags: 0
