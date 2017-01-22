@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
 
@@ -15,7 +16,7 @@ public class GameStart : MonoBehaviour {
 	}
     public void StartGame ()
     {
-        Application.LoadLevel ("Story");
+        SceneManager.LoadScene("Story");
     }
     public void ExitGame ()
     {
@@ -23,31 +24,35 @@ public class GameStart : MonoBehaviour {
     }
     public void Options ()
     {
-        Application.LoadLevel ("Options");
+        SceneManager.LoadScene("Options");
     }
     public void Credits()
     {
-        Application.LoadLevel ("Credits");
+        SceneManager.LoadScene("Credits");
     }
     public void Infinite ()
     {
-    	Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
     public void Easy()
     {
-    	Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
     public void Medium()
     {
-    	Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
     public void Hard()
     {
-    	Application.LoadLevel("Game");
+        SceneManager.LoadScene("Game");
     }
     public void Back()
     {
-        Application.LoadLevel("Menu");
+        SceneManager.LoadScene("Game");
+    }
+    public void ChooseSong()
+    {
+    	Application.LoadLevel("MusicSelection");
     }
 
 }
