@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
     public static bool inf=false;
+    private static GameStart _instance = null;
 
 	// Use this for initialization
 	void Start () {
-        
+        if (_instance == null)
+        {
+            _instance = this;
+        }
 	}
+    public static GameStart Instance()
+    {
+        return _instance;
+    }
 	
 	// Update is called once per frame
 	void Update () {

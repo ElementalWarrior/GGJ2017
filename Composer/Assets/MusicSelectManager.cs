@@ -37,21 +37,24 @@ public class MusicSelectManager : MonoBehaviour {
                 keyPressed = true;
             }
         }
-        //if (keyPressed && startTime > 0.5)
-        //{
-        //    switch (menuPosition)
-        //    {
-        //        case 0:
-        //            SceneManager.LoadScene("Story");
-        //            break;
-        //        case 1:
-        //            SceneManager.LoadScene("Credits");
-        //            break;
-        //        case 2:
-        //            Application.Quit();
-        //            break;
-        //    }
-        //}
+        if (keyPressed && startTime > 0.5)
+        {
+            switch (menuPosition)
+            {
+                case 0:
+                    GameStart.Instance().Easy();
+                    break;
+                case 1:
+                    GameStart.Instance().Medium();
+                    break;
+                case 2:
+                    GameStart.Instance().Hard();
+                    break;
+                default:
+                    GameStart.Instance().Infinite();
+                    break;
+            }
+        }
         lastPress += Time.deltaTime;
         bool greaterThan9 = menuPosition > 9;
         if (lastPress > 0.1 && (
@@ -98,12 +101,19 @@ public class MusicSelectManager : MonoBehaviour {
         if (lastMenuPosition != menuPosition)
         {
             //Debug.Log(lastMenuPosition + " " + menuPosition);
+            foreach (GameObject obj in MenuButtons)
+            {
+                //var foo = obj.GetComponentsInChildren(typeof(Component));
+                obj.GetComponentInChildren<AudioHover>().onExit();
+            }
             if(menuPosition > 9)
             {
                 GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
+                GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onHover();
             } else
             {
                 MenuButtons[menuPosition].GetComponent<UnityEngine.UI.Button>().Select();
+                MenuButtons[menuPosition].GetComponentInChildren<AudioHover>().onHover();
             }
         }
         lastMenuPosition = menuPosition;
