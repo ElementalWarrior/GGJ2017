@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
+    public static int diff;
 
 	// Use this for initialization
 	void Start () {
@@ -33,18 +34,22 @@ public class GameStart : MonoBehaviour {
     public void Infinite ()
     {
         SceneManager.LoadScene("Game");
+        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 1;
     }
     public void Easy()
     {
         SceneManager.LoadScene("Game");
+        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed=0.01F;
     }
     public void Medium()
     {
         SceneManager.LoadScene("Game");
+        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
     }
     public void Hard()
     {
         SceneManager.LoadScene("Game");
+        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
     }
     public void Back()
     {
