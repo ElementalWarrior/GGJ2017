@@ -8,6 +8,9 @@ public class NoteCollisionHandler : MonoBehaviour
     {
         if (collision.gameObject == GameManager.ObjectDeath)
         {
+            GameObject particles = Resources.Load<GameObject>("DeathParticleSpawner");
+            Instantiate(particles, this.transform.position, new Quaternion());
+            //collision.GetComponent<ParticleSystem>().Play();
             GameObject.Destroy(this.gameObject);
             GameManager.Instance().NumNotes--;
             GameManager.NumHearts -= 1;
