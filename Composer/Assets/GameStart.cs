@@ -52,7 +52,11 @@ public class GameStart : MonoBehaviour {
     }
     public void ChooseSong()
     {
-    	Application.LoadLevel("MusicSelection");
+    	SceneManager.LoadScene("MusicSelection");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    } 
 
 }
