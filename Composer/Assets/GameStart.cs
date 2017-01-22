@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
-    public static int diff;
+    public static bool inf=false;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +34,8 @@ public class GameStart : MonoBehaviour {
     public void Infinite ()
     {
         SceneManager.LoadScene("Game");
-        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 1;
+        Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.01F;
+        inf = true;
     }
     public void Easy()
     {
