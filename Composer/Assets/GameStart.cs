@@ -5,11 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class GameStart : MonoBehaviour {
     public static bool inf=false;
+    private static GameStart _instance = null;
 
 	// Use this for initialization
 	void Start () {
-        
+        if (_instance == null)
+        {
+            _instance = this;
+        }
 	}
+    public static GameStart Instance()
+    {
+        return _instance;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -41,16 +49,19 @@ public class GameStart : MonoBehaviour {
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed=0.01F;
+        inf = false;
     }
     public void Medium()
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
+        inf = false;
     }
     public void Hard()
     {
         SceneManager.LoadScene("Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
+        inf = false;
     }
     public void Back()
     {

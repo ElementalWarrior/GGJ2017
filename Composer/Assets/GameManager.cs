@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager _instance;
     // Use this for initialization
     void Start () {
+        NumHearts = 3;
         Score = 0;
         _instance = this;
         ObjectDeath = GameObject.Find("CollisionDeath");
