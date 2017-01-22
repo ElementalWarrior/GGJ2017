@@ -22,7 +22,6 @@ public class ApplicationSettings {
             _instance = new ApplicationSettings();
             _instance.Name = SceneManager.GetActiveScene().name;
         }
-        Debug.Log(_instance.Name);
         return _instance;
     }
 }
