@@ -10,6 +10,7 @@ public Sprite Composer_Green;
 
 private SpriteRenderer spriteRenderer;
 	// Use this for initialization
+    public GameManager.NoteColor CurrentColor = GameManager.NoteColor.Blue;
 	void Start () {
 
         Composer_Blue = Resources.Load<Sprite>("Composer_Blue");
@@ -40,14 +41,18 @@ private SpriteRenderer spriteRenderer;
 		if (spriteRenderer.sprite == Composer_Blue)
 		{
 			spriteRenderer.sprite = Composer_Red;
+            CurrentColor = GameManager.NoteColor.Red;
 		} else if (spriteRenderer.sprite == Composer_Red)
 		{
 			spriteRenderer.sprite = Composer_Yellow; 
+            CurrentColor = GameManager.NoteColor.Yellow;
 		} else if (spriteRenderer.sprite == Composer_Yellow)
 		{
+            CurrentColor = GameManager.NoteColor.Green;
 			spriteRenderer.sprite = Composer_Green;
 		} else 
 		{
+            CurrentColor = GameManager.NoteColor.Blue;
 			spriteRenderer.sprite = Composer_Blue; 
 		}
 

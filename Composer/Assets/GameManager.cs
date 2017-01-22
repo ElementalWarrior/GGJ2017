@@ -1,61 +1,46 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
 
-    public static GameObject defaultNote;
     public static GameObject ObjectDeath;
+    public Spawner WaveSpawnerLeft;
+    public Spawner WaveSpawnerRight;
+    public Spawner WaveSpawnerDown;
+    public Spawner WaveSpawnerUp;
+    private ComposerColor ComposerColor;
     // Use this for initialization
     void Start () {
-        defaultNote = Resources.Load<GameObject>("Note");
-        defaultNote.SetActive(false);
         ObjectDeath = GameObject.Find("CollisionDeath");
-        //CloneNote(MovementHandler.Tracks.Down);
-        //CloneNote(MovementHandler.Tracks.Up);
-        //CloneNote(MovementHandler.Tracks.Right);
+        ComposerColor = GameObject.Find("ComposerBackground").GetComponent<ComposerColor>();
+        BoxCollider2D collider = this.GetComponent<BoxCollider2D>();
+        
+        //resize camera bounds so we remove waves after they leave the viewport
+        collider.size = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelRect.width, Camera.main.pixelRect.height, 0)) - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0));
+
     }
     public enum NoteColor { Blue, Green, Red, Yellow }
-    public static GameObject CloneNote(Vector2 Direction, GameObject spawner,  NoteColor color)
-    {
-        GameObject newNote = Instantiate(GameManager.defaultNote, spawner.transform.position, new Quaternion());
-        switch (color)
-        {
-            case NoteColor.Blue:
-                newNote.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("note_blue");
-                break;
-            case NoteColor.Green:
-                newNote.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("note_green");
-                break;
-            case NoteColor.Red:
-                newNote.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("note_red");
-                break;
-            case NoteColor.Yellow:
-                newNote.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("note_yellow");
-                break;
-        }
-        //newNote.transform.position = Vector2.zero;
-        newNote.SetActive(true);
-        MovementHandler mhNote = newNote.GetComponent<MovementHandler>();
-        mhNote.direction = Direction;
-        return newNote;
-    }
 	
 	// Update is called once per frame
 	void Update () {
-        //if (Input.GetKeyUp(KeyCode.LeftArrow))
-        //{
-        //    CloneNote(MovementHandler.Tracks.Left);
-        //}else if(Input.GetKeyUp(KeyCode.RightArrow))
-        //{
-        //    CloneNote(MovementHandler.Tracks.Right);
-        //} else if (Input.GetKeyUp(KeyCode.UpArrow))
-        //{
-        //    CloneNote(MovementHandler.Tracks.Down);
-        //} else if (Input.GetKeyUp(KeyCode.DownArrow))
-        //{
-        //    CloneNote(MovementHandler.Tracks.Up);
-        //}
+        if (Input.GetKeyDown(KeyCode.LeftArrow))// || Input.GetAxis("Horizontal") < -0.5)
+        {
+            WaveSpawnerLeft.Spawn(ComposerColor.CurrentColor);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))// || Input.GetAxis("Horizontal") > 0.5)
+        {
+            WaveSpawnerRight.Spawn(ComposerColor.CurrentColor);
+        }
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            WaveSpawnerUp.Spawn(ComposerColor.CurrentColor);
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            WaveSpawnerDown.Spawn(ComposerColor.CurrentColor);
+        }
     }
 }
