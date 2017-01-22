@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ImageHandler : MonoBehaviour {
 
@@ -28,7 +29,9 @@ public class ImageHandler : MonoBehaviour {
 
         } else if (ComicNum >= 8) 
         {
-        Application.LoadLevel("Game");
+            
+            SceneManager.LoadScene("MusicSelection");
+           
     	}
 	}
 }

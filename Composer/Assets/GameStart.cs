@@ -45,5 +45,9 @@ public class GameStart : MonoBehaviour {
     {
     	Application.LoadLevel("Game");
     }
+    public void Back()
+    {
+        Application.LoadLevel("Menu");
+    }
 
 }
