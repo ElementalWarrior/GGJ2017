@@ -3,12 +3,15 @@ using System.Collections;
 
 public class WaveCollisionHandler : MonoBehaviour
 {
+    
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == this.tag && collision.name.IndexOf("Note") > -1)
         {
             GameObject.Destroy(collision.gameObject);
             GameManager.Instance().NumNotes--;
+            GameManager.Score += 10;
+            
         }
         if (collision.name.IndexOf("Note") > -1)
         {

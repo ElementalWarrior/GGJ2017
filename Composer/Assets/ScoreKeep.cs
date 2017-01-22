@@ -8,13 +8,15 @@ public class ScoreKeep : MonoBehaviour {
     public Text TimerText;
 	// Use this for initialization
 	void Start () {
-        start = Time.time;
+        //start = Time.time;
 	}
 	
 	// Update is called once per frame
 	public void Update () {
-        float t = Time.time - start;
-        string current = t.ToString("#.00");
+        // float t = Time.time - start;
+        //string current = t.ToString("#.00");
+        //TimerText.text = current;
+        string current = (GameManager.Score).ToString();
         TimerText.text = current;
 	}
   
