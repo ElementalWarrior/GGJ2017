@@ -16,9 +16,10 @@ public class MenuManager : MonoBehaviour {
 
     // Update is called once per frame
     float lastPress = 0;
+    float startTime = 0;
 
     void Update() {
-
+        startTime += Time.deltaTime;
         bool keyPressed = false;
         foreach (int code in Enum.GetValues(typeof(KeyCode)))
         {
@@ -34,7 +35,7 @@ public class MenuManager : MonoBehaviour {
                 keyPressed = true;
             }
         }
-        if(keyPressed)
+        if(keyPressed && startTime > 0.5)
         {
             switch(menuPosition)
             {
