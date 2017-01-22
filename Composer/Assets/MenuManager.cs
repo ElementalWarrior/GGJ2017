@@ -40,12 +40,15 @@ public class MenuManager : MonoBehaviour {
             switch(menuPosition)
             {
                 case 0:
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
                     SceneManager.LoadScene("Story");
                     break;
                 case 1:
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
                     SceneManager.LoadScene("Credits");
                     break;
                 case 2:
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
                     Application.Quit();
                     break;
             }

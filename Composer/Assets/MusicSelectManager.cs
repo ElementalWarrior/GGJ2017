@@ -43,15 +43,19 @@ public class MusicSelectManager : MonoBehaviour {
             switch (menuPosition)
             {
                 case 0:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Easy();
                     break;
                 case 1:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Medium();
                     break;
                 case 2:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Hard();
                     break;
                 default:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Infinite();
                     break;
             }

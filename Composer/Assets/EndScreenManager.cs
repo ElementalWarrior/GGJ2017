@@ -42,9 +42,11 @@ public class EndScreenManager : MonoBehaviour
             switch (menuPosition)
             {
                 case 0:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     SceneManager.LoadScene("Game");
                     break;
                 case 1:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     SceneManager.LoadScene("MusicSelection");
                     break;
             }
