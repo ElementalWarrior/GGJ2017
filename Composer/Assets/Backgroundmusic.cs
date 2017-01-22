@@ -18,7 +18,7 @@ public class Backgroundmusic : MonoBehaviour {
         
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
-        if (sceneName != "Game") 
+        if (sceneName != "MusicSelection") 
         {
             DontDestroyOnLoad(this.gameObject);
         }
