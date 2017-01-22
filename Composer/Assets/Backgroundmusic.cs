@@ -1,33 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Backgroundmusic : MonoBehaviour {
 
-        private static Backgroundmusic instance = null;
-        public static Backgroundmusic Instance
-        {
-            get { return instance; }
-        }
-    void Awake()
+    void Start()
     {
-        if (instance != null && instance != this)
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName != "Game")
         {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
             Destroy(this.gameObject);
-            return;
-        }
-        else {
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+      
+    }
+    
 }
