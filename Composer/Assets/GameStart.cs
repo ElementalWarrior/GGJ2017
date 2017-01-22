@@ -29,4 +29,21 @@ public class GameStart : MonoBehaviour {
     {
         Application.LoadLevel ("Credits");
     }
+    public void Infinite ()
+    {
+    	Application.LoadLevel("Game");
+    }
+    public void Easy()
+    {
+    	Application.LoadLevel("Game");
+    }
+    public void Medium()
+    {
+    	Application.LoadLevel("Game");
+    }
+    public void Hard()
+    {
+    	Application.LoadLevel("Game");
+    }
+
 }
