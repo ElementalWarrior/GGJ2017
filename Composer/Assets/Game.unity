@@ -602,7 +602,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &935112630
 Transform:
   m_ObjectHideFlags: 0
@@ -657,11 +657,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 974463063}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 10}
+  m_LocalPosition: {x: 0, y: -1.21, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985957710
 GameObject:
@@ -708,7 +708,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005594334
 GameObject:
@@ -755,7 +755,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115750951
 GameObject:
@@ -928,7 +928,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &1246405286
 Transform:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1353163209
 MonoBehaviour:
@@ -1046,7 +1046,8 @@ GameObject:
   - component: {fileID: 1407020377}
   - component: {fileID: 1407020376}
   - component: {fileID: 1407020382}
-  m_Layer: 8
+  - component: {fileID: 1407020383}
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1148,6 +1149,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimerText: {fileID: 1115750953}
+--- !u!61 &1407020383
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1407020375}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 17.8, y: 10}
 --- !u!1 &1617674016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1277,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &1774218087
 Transform:
   m_ObjectHideFlags: 0
@@ -1470,7 +1485,7 @@ MonoBehaviour:
   running: 1
   objectToSpawn: {fileID: 1461819611611430, guid: ef952896fe2114c4d91486dd29abeb37,
     type: 2}
-  UseTimer: 1
+  UseTimer: 0
 --- !u!4 &2095539755
 Transform:
   m_ObjectHideFlags: 0

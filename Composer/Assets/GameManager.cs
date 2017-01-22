@@ -23,23 +23,18 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             WaveSpawnerLeft.Spawn(ComposerColor.CurrentColor);
-            Debug.Log(ComposerColor.CurrentColor.ToString());
-            //CloneNote(MovementHandler.Tracks.Left);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             WaveSpawnerRight.Spawn(ComposerColor.CurrentColor);
-            //CloneNote(MovementHandler.Tracks.Right);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             WaveSpawnerUp.Spawn(ComposerColor.CurrentColor);
-            //CloneNote(MovementHandler.Tracks.Down);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             WaveSpawnerDown.Spawn(ComposerColor.CurrentColor);
-            //CloneNote(MovementHandler.Tracks.Up);
         }
     }
 }
