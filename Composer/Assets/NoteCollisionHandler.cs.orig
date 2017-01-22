@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+<<<<<<< HEAD
+=======
 
+>>>>>>> 468ebb6ddfea395d5641e70696fcbb1ca46a56d2
 public class NoteCollisionHandler : MonoBehaviour
 {
     
@@ -14,12 +17,8 @@ public class NoteCollisionHandler : MonoBehaviour
             GameManager.NumHearts -= 1;
             if (GameManager.NumHearts == 0)
             {
-<<<<<<< HEAD
-                Application.LoadLevel("Lose");
+                SceneManager.LoadScene("Lose");
                 
-=======
-                SceneManager.LoadScene("MusicSelection");
->>>>>>> d055ab418121bb5113574760647b7b977f0d774e
             }
             if (GameManager.NumHearts == 2)
             {
