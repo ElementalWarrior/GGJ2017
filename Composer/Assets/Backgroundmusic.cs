@@ -4,15 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Backgroundmusic : MonoBehaviour {
-   public bool happen=false;
-    void Awake()
-    {
-        if (happen)
-        {
-            Destroy(this.gameObject);
-        }
-        happen = true;
-    }
+   
     void Start()
     {
       
