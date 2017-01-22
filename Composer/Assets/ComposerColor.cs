@@ -32,22 +32,22 @@ public class ComposerColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetButton("Blue"))
+        if (Input.GetButton("Blue"))
         {
             CurrentColor = GameManager.NoteColor.Blue;
             spriteRenderer.sprite = Composer_Blue;
         }
-        else if (Input.GetKeyDown(KeyCode.S) || Input.GetButton("Red"))
+        else if (Input.GetButton("Red"))
         {
             spriteRenderer.sprite = Composer_Red;
             CurrentColor = GameManager.NoteColor.Red;
         }
-        else if (Input.GetKeyDown(KeyCode.D) || Input.GetButton("Yellow"))
+        else if (Input.GetButton("Yellow"))
         {
             spriteRenderer.sprite = Composer_Yellow;
             CurrentColor = GameManager.NoteColor.Yellow;
         }
-        else if (Input.GetKeyDown(KeyCode.F) || Input.GetButton("Green"))
+        else if (Input.GetButton("Green"))
         {
             spriteRenderer.sprite = Composer_Green;
             CurrentColor = GameManager.NoteColor.Green;
