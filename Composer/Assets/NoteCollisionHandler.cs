@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class NoteCollisionHandler : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class NoteCollisionHandler : MonoBehaviour
             GameManager.NumHearts -= 1;
             if (GameManager.NumHearts == 0)
             {
-                Application.LoadLevel("MusicSelection");
+                SceneManager.LoadScene("MusicSelection");
             }
             if (GameManager.NumHearts == 2)
             {
