@@ -20,23 +20,23 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             WaveSpawnerLeft.Spawn(ComposerColor.CurrentColor);
             Debug.Log(ComposerColor.CurrentColor.ToString());
             //CloneNote(MovementHandler.Tracks.Left);
         }
-        else if (Input.GetKeyUp(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             WaveSpawnerRight.Spawn(ComposerColor.CurrentColor);
             //CloneNote(MovementHandler.Tracks.Right);
         }
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             WaveSpawnerUp.Spawn(ComposerColor.CurrentColor);
             //CloneNote(MovementHandler.Tracks.Down);
         }
-        else if (Input.GetKeyUp(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             WaveSpawnerDown.Spawn(ComposerColor.CurrentColor);
             //CloneNote(MovementHandler.Tracks.Up);
