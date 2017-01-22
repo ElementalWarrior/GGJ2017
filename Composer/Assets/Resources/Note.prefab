@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e810ab3fc4c06044ba964c9fcbbafae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 82642007108859174, guid: 7e2927be986b0a74ab80af950b3bfeb0, type: 2}
 --- !u!114 &114745589930569712
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  Speed: 0.01
+  Speed: 0.015187831
 --- !u!212 &212040603754546052
 SpriteRenderer:
   m_ObjectHideFlags: 1
