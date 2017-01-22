@@ -8,10 +8,11 @@ public class WaveCollisionHandler : MonoBehaviour
         if (collision.gameObject.tag == this.tag && collision.name.IndexOf("Note") > -1)
         {
             GameObject.Destroy(collision.gameObject);
+            GameManager.Instance().NumNotes--;
         }
         if (collision.name.IndexOf("Note") > -1)
         {
-            GameObject.Destroy(this.gameObject);
+            DestroySelf();
         }
         //if (this.GetComponent<Collider2D>().bounds.Intersects(Camera.main.GetComponent<Collider2D>().bounds))
         //{
@@ -22,8 +23,12 @@ public class WaveCollisionHandler : MonoBehaviour
     {
         if (other.name == "Main Camera")
         {
-            GameObject.Destroy(this.gameObject);
-
+            DestroySelf();
         }
+    }
+    private void DestroySelf()
+    {
+        GameObject.Destroy(this.gameObject);
+        GameManager.Instance().NumWaves--;
     }
 }

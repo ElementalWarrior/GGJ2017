@@ -8,6 +8,7 @@ public class NoteCollisionHandler : MonoBehaviour
         if (collision.gameObject == GameManager.ObjectDeath)
         {
             GameObject.Destroy(this.gameObject);
+            GameManager.Instance().NumNotes--;
         }
     }
 }
