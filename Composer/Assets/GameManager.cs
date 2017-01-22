@@ -4,8 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-  
-    public static int Score = 0;
+
+    public static int Score;
     public GameObject heart0;
     public GameObject heart1;
     public GameObject heart2;
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager _instance;
     // Use this for initialization
     void Start () {
+        Score = 0;
         _instance = this;
         ObjectDeath = GameObject.Find("CollisionDeath");
         ComposerColor = GameObject.Find("ComposerBackground").GetComponent<ComposerColor>();

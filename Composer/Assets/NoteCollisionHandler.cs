@@ -13,7 +13,8 @@ public class NoteCollisionHandler : MonoBehaviour
             GameManager.NumHearts -= 1;
             if (GameManager.NumHearts == 0)
             {
-                Application.LoadLevel("MusicSelection");
+                Application.LoadLevel("Lose");
+                
             }
             if (GameManager.NumHearts == 2)
             {
