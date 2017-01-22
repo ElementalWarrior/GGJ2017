@@ -901,6 +901,7 @@ GameObject:
   - component: {fileID: 1735883230}
   - component: {fileID: 1735883229}
   - component: {fileID: 1735883234}
+  - component: {fileID: 1735883235}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -988,6 +989,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 2004548344}
+--- !u!114 &1735883235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1735883228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff421ff6a648f644894c83112055fca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastMenuPosition: 0
+  menuPosition: 0
+  MenuButtons:
+  - {fileID: 1603698765}
+  - {fileID: 1350970892}
 --- !u!1 &2004548341
 GameObject:
   m_ObjectHideFlags: 0
