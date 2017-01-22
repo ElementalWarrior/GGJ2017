@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,11 +49,45 @@ public class RatioEnforcer : MonoBehaviour {
 
             camera.rect = rect;
         }
-
+        
+        //Debug.Log(Joysticks[1].Keys);
     }
-	
+    Dictionary<int, Dictionary<string, bool>> Joysticks = new Dictionary<int, Dictionary<string, bool>>();
+    bool QueryJoystick(int joyNum)
+    {
+        if (!Joysticks.ContainsKey(joyNum)) {
+            Joysticks[joyNum] = new Dictionary<string, bool>();
+        }
+        int i;
+        for (i = 0; i < 40; i++)
+        {
+            //we'll try to get a joystick button
+            try
+            {
+                string buttonSlug = string.Format("joystick {0} button {1}", joyNum, i);
+                Input.GetKey(buttonSlug);
+                Debug.Log(buttonSlug);
+                Joysticks[joyNum][buttonSlug] = true;
+            }
+            catch (Exception) //if it throws an exception, then the button doesn't exist
+            {
+                break;
+            }
+        }
+        if (i == 0)
+        {
+            return false;
+        }
+        return true;
+    }
 	// Update is called once per frame
 	void Update () {
-		
+		//foreach (string key in Joysticks[1].Keys)
+  //      {
+  //          if(Input.GetKeyDown(key))
+  //          {
+  //              Debug.Log(key);
+  //          }
+  //      }
 	}
 }
