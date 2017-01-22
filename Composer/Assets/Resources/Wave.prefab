@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 114360565341340374}
   - component: {fileID: 61777645606660332}
   - component: {fileID: 50236653482119978}
-  - component: {fileID: 114686984073356026}
   m_Layer: 0
   m_Name: Wave
   m_TagString: Untagged
@@ -88,17 +87,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11720031d4015214f8d6ea36fe888488, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114686984073356026
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1219602165258478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f11507c0a0da8b34cb1d8d8bb8233c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114717011724583748
