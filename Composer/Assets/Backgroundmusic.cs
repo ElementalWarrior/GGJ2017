@@ -7,6 +7,11 @@ public class Backgroundmusic : MonoBehaviour {
 
     void Start()
     {
+        
+    }
+
+    void Update()
+    {
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
         if (sceneName != "Game")
@@ -15,11 +20,6 @@ public class Backgroundmusic : MonoBehaviour {
         }
         else
             Destroy(this.gameObject);
-    }
-
-    void Update()
-    {
-      
     }
     
 }
