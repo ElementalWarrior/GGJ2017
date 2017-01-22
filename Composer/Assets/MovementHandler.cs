@@ -32,13 +32,6 @@ public class MovementHandler : MonoBehaviour
         gameObject.transform.position += direction * Speed;
 
     }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject == GameManager.ObjectDeath)
-        {
-            GameObject.Destroy(this.gameObject);
-        }
-    }
     //public enum Tracks { Up, Right, Down, Left} 
     //public Tracks Track { get; set; }
 }
