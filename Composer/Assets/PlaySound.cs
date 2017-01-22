@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlaySound : MonoBehaviour {
-    
     public AudioSource audioSource;
     public AudioClip audioClip;
     public void playClip()
