@@ -18,6 +18,7 @@ public class ScoreKeep : MonoBehaviour {
         //TimerText.text = current;
         string current = (GameManager.Score).ToString();
         TimerText.text = current;
-	}
+        
+    }
   
 }
