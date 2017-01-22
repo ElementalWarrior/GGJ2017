@@ -12,7 +12,7 @@ public class MusicSelectManager : MonoBehaviour {
     // Use this for initializations
     void Start()
     {
-        GameObject.Find("Text").GetComponent<UnityEngine.UI.Button>().Select();
+        GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
     }
 
     // Update is called once per frame
@@ -100,7 +100,7 @@ public class MusicSelectManager : MonoBehaviour {
             //Debug.Log(lastMenuPosition + " " + menuPosition);
             if(menuPosition > 9)
             {
-                GameObject.Find("Text").GetComponent<UnityEngine.UI.Button>().Select();
+                GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
             } else
             {
                 MenuButtons[menuPosition].GetComponent<UnityEngine.UI.Button>().Select();
