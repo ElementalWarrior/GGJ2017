@@ -35,27 +35,48 @@ public class GameManager : MonoBehaviour {
         return _instance;
     }
     public enum NoteColor { Blue, Green, Red, Yellow }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    float deltaLeft = 0;
+    float deltaRight = 0;
+    float deltaUp = 0;
+    float deltaDown = 0;
+    void Update () {
+        deltaLeft += Time.deltaTime;
+        deltaRight += Time.deltaTime;
+        deltaUp += Time.deltaTime;
+        deltaDown += Time.deltaTime;
         if (NumWaves > NumNotes + 1)
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))// || Input.GetAxis("Horizontal") < -0.5)
+        if(Input.GetKeyDown("joystick 1 button 0"))
         {
+            Debug.Log("joystick button 0");
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow)
+            || (Input.GetAxis("Horizontal") < -0.5 && deltaLeft > 0.2)
+            )// || Input.GetAxis("Horizontal") < -0.5)
+        {
+            deltaLeft = 0;
             WaveSpawnerLeft.Spawn(ComposerColor.CurrentColor);
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))// || Input.GetAxis("Horizontal") > 0.5)
+        else if (Input.GetKeyDown(KeyCode.RightArrow)
+            || (Input.GetAxis("Horizontal") > 0.5 && deltaRight > 0.2))// || Input.GetAxis("Horizontal") > 0.5)
         {
+            deltaRight = 0;
             WaveSpawnerRight.Spawn(ComposerColor.CurrentColor);
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKeyDown(KeyCode.UpArrow)
+            || (Input.GetAxis("Vertical") < -0.5 && deltaUp > 0.2))
         {
+            deltaUp = 0;
             WaveSpawnerUp.Spawn(ComposerColor.CurrentColor);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.DownArrow)
+            || (Input.GetAxis("Vertical") > 0.5 && deltaDown > 0.2))
         {
+            deltaDown = 0;
             WaveSpawnerDown.Spawn(ComposerColor.CurrentColor);
         }
     }
