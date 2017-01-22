@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-
+    public GameObject heart0;
+    public GameObject heart1;
+    public GameObject heart2;
+    public static int NumHearts = 3;
     public static GameObject ObjectDeath;
     public Spawner WaveSpawnerLeft;
     public Spawner WaveSpawnerRight;
