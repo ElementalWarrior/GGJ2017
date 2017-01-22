@@ -50,5 +50,9 @@ public class GameStart : MonoBehaviour {
     {
         SceneManager.LoadScene("Game");
     }
+    public void ChooseSong()
+    {
+    	Application.LoadLevel("MusicSelection");
+    }
 
 }
