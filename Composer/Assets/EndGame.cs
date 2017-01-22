@@ -13,25 +13,12 @@ public class EndGame : MonoBehaviour {
         if (GameStart.inf)
         {
             audio.loop = true;
-            audio.Play();
-        }
-        else if (GameStart.lvl == 1)
-        {
-            audioeasy.Play();
-        }
-        else if (GameStart.lvl == 2)
-        {
-            audiomed.Play();
-        }
-        else 
-        {
-            audiohard.Play();
         }
     }
 
     void Update()
     {
-       if (!audio.isPlaying)
+       if (!audio.isPlaying && !audioeasy.isPlaying && !audiomed.isPlaying && !audiohard.isPlaying)
         {
             Application.LoadLevel("Win");
         }
