@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour {
     public static bool isStarted=false;
     public int lastMenuPosition = 0;
     public int menuPosition = 0;
+    bool changeSelect = false;
     public List<GameObject> MenuButtons = new List<GameObject>();
     // Use this for initializations
     void Start () {
@@ -17,7 +18,7 @@ public class MenuManager : MonoBehaviour {
     // Update is called once per frame
     float lastPress = 0;
     float startTime = 0;
-
+    
     void Update() {
         startTime += Time.deltaTime;
         bool keyPressed = false;
@@ -64,6 +65,7 @@ public class MenuManager : MonoBehaviour {
             {
                 menuPosition = MenuButtons.Count - 1;
             }
+            changeSelect = true;
         }
         else if (lastPress > 0.1 && (
             Input.GetAxis("Vertical") > 0.5 || 
@@ -71,14 +73,16 @@ public class MenuManager : MonoBehaviour {
         {
             menuPosition = (menuPosition + 1) % MenuButtons.Count;
             lastPress = 0;
+            changeSelect = true;
         }
 
     }
     private void FixedUpdate()
     {
 
-        if (lastMenuPosition != menuPosition)
+        if (lastMenuPosition != menuPosition && changeSelect)
         {
+            changeSelect = false;
             //Debug.Log(lastMenuPosition + " " + menuPosition);
             MenuButtons[menuPosition].GetComponent<UnityEngine.UI.Button>().Select();
         }

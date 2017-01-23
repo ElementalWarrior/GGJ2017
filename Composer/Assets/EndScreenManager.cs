@@ -9,6 +9,7 @@ public class EndScreenManager : MonoBehaviour
     public int lastMenuPosition = 0;
     public int menuPosition = 0;
     public List<GameObject> MenuButtons = new List<GameObject>();
+    bool changeSelect = false;
     // Use this for initializations
     void Start()
     {
@@ -62,6 +63,7 @@ public class EndScreenManager : MonoBehaviour
             {
                 menuPosition = MenuButtons.Count - 1;
             }
+            changeSelect = true;
         }
         else if (lastPress > 0.1 && (
             Input.GetAxis("Vertical") > 0.5 ||
@@ -69,14 +71,16 @@ public class EndScreenManager : MonoBehaviour
         {
             menuPosition = (menuPosition + 1) % MenuButtons.Count;
             lastPress = 0;
+            changeSelect = true;
         }
 
     }
     private void FixedUpdate()
     {
 
-        if (lastMenuPosition != menuPosition)
+        if (lastMenuPosition != menuPosition && changeSelect)
         {
+            changeSelect = false;
             //Debug.Log(lastMenuPosition + " " + menuPosition);
             MenuButtons[menuPosition].GetComponent<UnityEngine.UI.Button>().Select();
         }
