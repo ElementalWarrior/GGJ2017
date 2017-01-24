@@ -32,6 +32,10 @@ public class GameStart : MonoBehaviour {
         DontDestroyOnLoad(GameObject.Find("hardSong"));
         DontDestroyOnLoad(GameObject.Find("infiniteSong"));
     }
+    public void Game()
+    {
+        SceneManager.LoadScene("Game");
+    }
     public void ExitGame ()
     {
         Application.Quit();
