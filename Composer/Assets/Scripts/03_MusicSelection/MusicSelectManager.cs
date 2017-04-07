@@ -68,6 +68,10 @@ public class MusicSelectManager : MonoBehaviour {
         }
         lastPress += Time.deltaTime;
         bool greaterThan9 = menuPosition > 9;
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Scenes/Menu");
+        }
         if (lastPress > 0.1 && (
             Input.GetAxis("Horizontal") > 0.5 ||
             Input.GetKey(KeyCode.RightArrow)))
