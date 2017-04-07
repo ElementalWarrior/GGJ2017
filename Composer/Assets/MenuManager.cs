@@ -46,11 +46,11 @@ public class MenuManager : MonoBehaviour {
             {
                 case 0:
                     GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("Story");
+                    SceneManager.LoadScene("Scenes/Story");
                     break;
                 case 1:
                     GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("Credits");
+                    SceneManager.LoadScene("Scenes/Credits");
                     break;
                 case 2:
                     GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();

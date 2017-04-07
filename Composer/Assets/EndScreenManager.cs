@@ -48,11 +48,11 @@ public class EndScreenManager : MonoBehaviour
             {
                 case 0:
                     GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("Game");
+                    SceneManager.LoadScene("Scenes/Game");
                     break;
                 case 1:
                     GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("MusicSelection");
+                    SceneManager.LoadScene("Scenes/MusicSelection");
                     break;
             }
         }

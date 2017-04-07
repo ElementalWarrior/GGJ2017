@@ -39,7 +39,7 @@ public class ImageHandler : MonoBehaviour {
         } else if (ComicNum >= 11 && (keyPressed || _counter >= 8)) 
         {
             
-            SceneManager.LoadScene("MusicSelection");
+            SceneManager.LoadScene("Scenes/MusicSelection");
            
     	}
 	}
