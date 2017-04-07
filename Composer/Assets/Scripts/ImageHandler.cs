@@ -32,7 +32,7 @@ public class ImageHandler : MonoBehaviour {
 		 if(ComicNum < 11 && (keyPressed || _counter >= 8))
         {
         	ComicNum++;
-            Sprite tex = Resources.Load<Sprite>("comic_0" + ComicNum);
+            Sprite tex = Resources.Load<Sprite>("Textures/comic_0" + ComicNum);
             this.gameObject.GetComponent<SpriteRenderer>().sprite = tex;
             _counter = 0;
 
