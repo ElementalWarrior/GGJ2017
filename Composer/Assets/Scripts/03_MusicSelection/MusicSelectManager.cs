@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MusicSelectManager : MonoBehaviour {
 
-    public int lastMenuPosition = 10;
-    public int menuPosition = 10;
+    public int lastMenuPosition = 0;
+    public int menuPosition = 0;
     public List<GameObject> MenuButtons = new List<GameObject>();
     bool changeSelect = false;
     // Use this for initializations
@@ -67,30 +67,11 @@ public class MusicSelectManager : MonoBehaviour {
             }
         }
         lastPress += Time.deltaTime;
-        bool greaterThan9 = menuPosition > 9;
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Scenes/Menu");
         }
         if (lastPress > 0.1 && (
-            Input.GetAxis("Horizontal") > 0.5 ||
-            Input.GetKey(KeyCode.RightArrow)))
-        {
-            if (menuPosition > 9)
-            {
-                menuPosition -= 10;
-                changeSelect = true;
-            }
-        } else if (lastPress > 0.1 && (
-            Input.GetAxis("Horizontal") < -0.5 ||
-            Input.GetKey(KeyCode.LeftArrow))) {
-
-            if (menuPosition < 10)
-            {
-                menuPosition += 10;
-                changeSelect = true;
-            }
-        } else if (lastPress > 0.1 && (
          Input.GetAxis("Vertical") < -0.5 ||
          Input.GetKey(KeyCode.UpArrow)))
         {
@@ -101,7 +82,6 @@ public class MusicSelectManager : MonoBehaviour {
                 menuPosition = 0;
             }
             changeSelect = true;
-            menuPosition += greaterThan9 ? 10 : 0;
         }
         else if (lastPress > 0.1 && (
             Input.GetAxis("Vertical") > 0.5 ||
@@ -109,7 +89,6 @@ public class MusicSelectManager : MonoBehaviour {
         {
             menuPosition = Mathf.Min(menuPosition + 1, MenuButtons.Count-1);
             lastPress = 0;
-            menuPosition += greaterThan9 ? 10 : 0;
             changeSelect = true;
         }
 
@@ -127,11 +106,11 @@ public class MusicSelectManager : MonoBehaviour {
                 obj.GetComponentInChildren<AudioHover>().onExit();
             }
             GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onExit();
-            if (menuPosition > 9)
-            {
-                GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
-                GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onHover();
-            } else
+            //if (menuPosition > 9)
+            //{
+            //    GameObject.Find("Infinite").GetComponent<UnityEngine.UI.Button>().Select();
+            //    GameObject.Find("Infinite").GetComponentInChildren<AudioHover>().onHover();
+            //} else
             {
                 MenuButtons[menuPosition].GetComponent<UnityEngine.UI.Button>().Select();
                 MenuButtons[menuPosition].GetComponentInChildren<AudioHover>().onHover();
