@@ -34,6 +34,7 @@ public class MenuManager : MonoBehaviour {
                     || Input.GetKeyDown(KeyCode.Mouse1)
                     || Input.GetKeyDown(KeyCode.Mouse2)
                     || Input.GetKeyDown(KeyCode.Mouse3)
+                    || Input.GetKeyDown(KeyCode.Escape)
                     )
                 )
             {
