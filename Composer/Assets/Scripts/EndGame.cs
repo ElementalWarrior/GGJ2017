@@ -19,7 +19,7 @@ public class EndGame : MonoBehaviour {
     {
         GameObject music = GameObject.Find("music");
         AudioSource aSource = music.GetComponent<AudioSource>();
-       if (!aSource.isPlaying)
+       if (!aSource.isPlaying && !GameManager.Instance().IsPaused)
         {
             Application.LoadLevel("Win");
         }
