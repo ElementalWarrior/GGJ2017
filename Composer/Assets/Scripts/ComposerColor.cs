@@ -15,10 +15,10 @@ public class ComposerColor : MonoBehaviour
     void Start()
     {
 
-        Composer_Blue = Resources.Load<Sprite>("Composer_Blue");
-        Composer_Red = Resources.Load<Sprite>("Composer_Red");
-        Composer_Yellow = Resources.Load<Sprite>("Composer_Yellow");
-        Composer_Green = Resources.Load<Sprite>("Composer_Green");
+        Composer_Blue = Resources.Load<Sprite>("Textures/Composer_Blue");
+        Composer_Red = Resources.Load<Sprite>("Textures/Composer_Red");
+        Composer_Yellow = Resources.Load<Sprite>("Textures/Composer_Yellow");
+        Composer_Green = Resources.Load<Sprite>("Textures/Composer_Green");
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         //access the SpriteRenderer attached to object 
