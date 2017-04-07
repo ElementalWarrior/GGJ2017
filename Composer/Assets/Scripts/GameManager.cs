@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
     float deltaDown = 0;
     void Update () {
         if (GameStart.inf) {
-            Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.01F + (Time.time * 0.0003F);
+            Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.01F + (Time.timeSinceLevelLoad * 0.0003F);
         }
         
         deltaLeft += Time.deltaTime;
