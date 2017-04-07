@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour {
     public int NumWaves = 0;
     public int NumNotes = 0;
     public static GameManager _instance;
+    public bool IsPaused = false;
+    public GameObject PauseScreen;
     // Use this for initialization
     void Start () {
         NumHearts = 3;
@@ -28,6 +30,7 @@ public class GameManager : MonoBehaviour {
         ObjectDeath = GameObject.Find("CollisionDeath");
         ComposerColor = GameObject.Find("ComposerBackground").GetComponent<ComposerColor>();
         BoxCollider2D collider = this.GetComponent<BoxCollider2D>();
+        
         
         //resize camera bounds so we remove waves after they leave the viewport
         collider.size = Camera.main.ScreenToWorldPoint(new Vector3(Camera.main.pixelRect.width, Camera.main.pixelRect.height, 0)) - Camera.main.ScreenToWorldPoint(new Vector3(0,0,0));
@@ -62,13 +65,21 @@ public class GameManager : MonoBehaviour {
         {
             return;
         }
-        if(Input.GetKeyDown("joystick 1 button 0"))
+
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log("joystick button 0");
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow)
-            || (Input.GetAxis("Horizontal") < -0.5 && deltaLeft > 0.2)
-            )// || Input.GetAxis("Horizontal") < -0.5)
+            if (IsPaused)
+            {
+                UnPause();
+            } else
+            {
+                Pause();
+            }
+        } else if ((Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt)) && Input.GetKeyDown(KeyCode.Tab)) {
+            Pause();
+        } else if (Input.GetKeyDown(KeyCode.LeftArrow)
+         || (Input.GetAxis("Horizontal") < -0.5 && deltaLeft > 0.2)
+         )// || Input.GetAxis("Horizontal") < -0.5)
         {
             deltaLeft = 0;
             WaveSpawnerLeft.Spawn(ComposerColor.CurrentColor);
@@ -90,6 +101,31 @@ public class GameManager : MonoBehaviour {
         {
             deltaDown = 0;
             WaveSpawnerDown.Spawn(ComposerColor.CurrentColor);
+        }
+    }
+    public void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            Pause();
+        }
+    }
+    public void Pause()
+    {
+        IsPaused = true;
+        PauseScreen.SetActive(true);
+        foreach (AudioSource a in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            a.Pause();
+        }
+    }
+    public void UnPause()
+    {
+        IsPaused = false;
+        PauseScreen.SetActive(false);
+        foreach (AudioSource a in GameObject.FindObjectsOfType<AudioSource>())
+        {
+            a.UnPause();
         }
     }
 }

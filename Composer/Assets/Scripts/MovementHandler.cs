@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+    
 
 public class MovementHandler : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class MovementHandler : MonoBehaviour
         //        direction.x = -0.1f;
         //        break;
         //}
-        gameObject.transform.position += direction * Speed;
+        if (!GameManager.Instance().IsPaused)
+        {
+            gameObject.transform.position += direction * Speed;
+        }
 
     }
     //public enum Tracks { Up, Right, Down, Left} 
