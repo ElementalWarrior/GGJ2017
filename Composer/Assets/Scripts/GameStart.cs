@@ -26,11 +26,15 @@ public class GameStart : MonoBehaviour {
 	}
     public void StartGame ()
     {
-        SceneManager.LoadScene("Story");
+        SceneManager.LoadScene("Scenes/Story");
         DontDestroyOnLoad(GameObject.Find("easySong"));
         DontDestroyOnLoad(GameObject.Find("mediumSong"));
         DontDestroyOnLoad(GameObject.Find("hardSong"));
         DontDestroyOnLoad(GameObject.Find("infiniteSong"));
+    }
+    public void Game()
+    {
+        SceneManager.LoadScene("Scenes/Game");
     }
     public void ExitGame ()
     {
@@ -38,29 +42,29 @@ public class GameStart : MonoBehaviour {
     }
     public void Options ()
     {
-        SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("Scenes/Options");
     }
     public void Credits()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Scenes/Credits");
     }
     public void Infinite ()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Scenes/Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.01F;
         ApplicationSettings.Instance().GameSong = GameObject.Find("infiniteSong").GetComponent<AudioSource>().clip;
         inf = true;
     }
     public void Easy()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Scenes/Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed=0.01F;
         inf = false;
         ApplicationSettings.Instance().GameSong = GameObject.Find("easySong").GetComponent<AudioSource>().clip;
     }
     public void Medium()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Scenes/Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.02F;
         inf = false;
         lvl = 2;
@@ -68,7 +72,7 @@ public class GameStart : MonoBehaviour {
     }
     public void Hard()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Scenes/Game");
         Resources.Load<GameObject>("Note").GetComponent<MovementHandler>().Speed = 0.03F;
         inf = false;
         lvl = 3;
@@ -76,15 +80,15 @@ public class GameStart : MonoBehaviour {
     }
     public void Back()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Scenes/Game");
     }
     public void ChooseSong()
     {
-    	SceneManager.LoadScene("MusicSelection");
+    	SceneManager.LoadScene("Scenes/MusicSelection");
     }
     public void MainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("Scenes/Scenes/Menu");
     } 
 
 }

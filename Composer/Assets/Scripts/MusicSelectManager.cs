@@ -9,6 +9,7 @@ public class MusicSelectManager : MonoBehaviour {
     public int lastMenuPosition = 10;
     public int menuPosition = 10;
     public List<GameObject> MenuButtons = new List<GameObject>();
+    bool changeSelect = false;
     // Use this for initializations
     void Start()
     {
@@ -32,6 +33,10 @@ public class MusicSelectManager : MonoBehaviour {
                     || Input.GetKeyDown(KeyCode.DownArrow)
                     || Input.GetKeyDown(KeyCode.LeftArrow)
                     || Input.GetKeyDown(KeyCode.RightArrow)
+                    || Input.GetKeyDown(KeyCode.Mouse0)
+                    || Input.GetKeyDown(KeyCode.Mouse1)
+                    || Input.GetKeyDown(KeyCode.Mouse2)
+                    || Input.GetKeyDown(KeyCode.Mouse3)
                     )
                 )
             {
@@ -43,15 +48,19 @@ public class MusicSelectManager : MonoBehaviour {
             switch (menuPosition)
             {
                 case 0:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Easy();
                     break;
                 case 1:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Medium();
                     break;
                 case 2:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Hard();
                     break;
                 default:
+                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
                     GameStart.Instance().Infinite();
                     break;
             }
@@ -65,6 +74,7 @@ public class MusicSelectManager : MonoBehaviour {
             if (menuPosition > 9)
             {
                 menuPosition -= 10;
+                changeSelect = true;
             }
         } else if (lastPress > 0.1 && (
             Input.GetAxis("Horizontal") < -0.5 ||
@@ -73,6 +83,7 @@ public class MusicSelectManager : MonoBehaviour {
             if (menuPosition < 10)
             {
                 menuPosition += 10;
+                changeSelect = true;
             }
         } else if (lastPress > 0.1 && (
          Input.GetAxis("Vertical") < -0.5 ||
@@ -82,25 +93,28 @@ public class MusicSelectManager : MonoBehaviour {
             menuPosition -= 1;
             if (menuPosition < 0)
             {
-                menuPosition = MenuButtons.Count - 1;
+                menuPosition = 0;
             }
+            changeSelect = true;
             menuPosition += greaterThan9 ? 10 : 0;
         }
         else if (lastPress > 0.1 && (
             Input.GetAxis("Vertical") > 0.5 ||
             Input.GetKey(KeyCode.DownArrow)))
         {
-            menuPosition = (menuPosition + 1) % MenuButtons.Count;
+            menuPosition = Mathf.Min(menuPosition + 1, MenuButtons.Count-1);
             lastPress = 0;
             menuPosition += greaterThan9 ? 10 : 0;
+            changeSelect = true;
         }
 
     }
     private void FixedUpdate()
     {
 
-        if (lastMenuPosition != menuPosition)
+        if (lastMenuPosition != menuPosition && changeSelect)
         {
+            changeSelect = false;
             //Debug.Log(lastMenuPosition + " " + menuPosition);
             foreach (GameObject obj in MenuButtons)
             {

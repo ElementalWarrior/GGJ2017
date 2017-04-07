@@ -29,17 +29,17 @@ public class ImageHandler : MonoBehaviour {
                 keyPressed = true;
             }
         }
-		 if(ComicNum < 11 && (keyPressed || _counter >= 4))
+		 if(ComicNum < 11 && (keyPressed || _counter >= 8))
         {
         	ComicNum++;
-            Sprite tex = Resources.Load<Sprite>("comic_0" + ComicNum);
+            Sprite tex = Resources.Load<Sprite>("Textures/comic_0" + ComicNum);
             this.gameObject.GetComponent<SpriteRenderer>().sprite = tex;
             _counter = 0;
 
-        } else if (ComicNum >= 11 && (keyPressed || _counter >= 4)) 
+        } else if (ComicNum >= 11 && (keyPressed || _counter >= 8)) 
         {
             
-            SceneManager.LoadScene("MusicSelection");
+            SceneManager.LoadScene("Scenes/MusicSelection");
            
     	}
 	}
