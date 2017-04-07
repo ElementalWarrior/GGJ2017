@@ -58,8 +58,8 @@ public class EndScreenManager : MonoBehaviour
         }
         lastPress += Time.deltaTime;
         if (lastPress > 0.1 && (
-            Input.GetAxis("Vertical") < -0.5 ||
-            Input.GetKey(KeyCode.UpArrow)))
+            Input.GetAxis("Horizontal") < -0.5 ||
+            Input.GetKey(KeyCode.LeftArrow)))
         {
             lastPress = 0;
             menuPosition -= 1;
@@ -70,8 +70,8 @@ public class EndScreenManager : MonoBehaviour
             changeSelect = true;
         }
         else if (lastPress > 0.1 && (
-            Input.GetAxis("Vertical") > 0.5 ||
-            Input.GetKey(KeyCode.DownArrow)))
+            Input.GetAxis("Horizontal") > 0.5 ||
+            Input.GetKey(KeyCode.RightArrow)))
         {
             menuPosition = Mathf.Min(menuPosition + 1, MenuButtons.Count-1);
             lastPress = 0;
