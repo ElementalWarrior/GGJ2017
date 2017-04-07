@@ -33,6 +33,10 @@ public class MusicSelectManager : MonoBehaviour {
                     || Input.GetKeyDown(KeyCode.DownArrow)
                     || Input.GetKeyDown(KeyCode.LeftArrow)
                     || Input.GetKeyDown(KeyCode.RightArrow)
+                    || Input.GetKeyDown(KeyCode.Mouse0)
+                    || Input.GetKeyDown(KeyCode.Mouse1)
+                    || Input.GetKeyDown(KeyCode.Mouse2)
+                    || Input.GetKeyDown(KeyCode.Mouse3)
                     )
                 )
             {
@@ -89,7 +93,7 @@ public class MusicSelectManager : MonoBehaviour {
             menuPosition -= 1;
             if (menuPosition < 0)
             {
-                menuPosition = MenuButtons.Count - 1;
+                menuPosition = 0;
             }
             changeSelect = true;
             menuPosition += greaterThan9 ? 10 : 0;
@@ -98,7 +102,7 @@ public class MusicSelectManager : MonoBehaviour {
             Input.GetAxis("Vertical") > 0.5 ||
             Input.GetKey(KeyCode.DownArrow)))
         {
-            menuPosition = (menuPosition + 1) % MenuButtons.Count;
+            menuPosition = Mathf.Min(menuPosition + 1, MenuButtons.Count-1);
             lastPress = 0;
             menuPosition += greaterThan9 ? 10 : 0;
             changeSelect = true;

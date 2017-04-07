@@ -1,27 +1,25 @@
-﻿using UnityEngine;
+﻿using System;
 using System.Collections;
-using System;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class EndScreenManager : MonoBehaviour
-{
+public class MenuManager : MonoBehaviour {
+    public static bool isStarted=false;
     public int lastMenuPosition = 0;
     public int menuPosition = 0;
-    public List<GameObject> MenuButtons = new List<GameObject>();
     bool changeSelect = false;
+    public List<GameObject> MenuButtons = new List<GameObject>();
     // Use this for initializations
-    void Start()
-    {
-        MenuButtons[0].GetComponent<UnityEngine.UI.Button>().Select();
+    void Start () {
+        GameObject.Find("start").GetComponent<UnityEngine.UI.Button>().Select();
     }
 
     // Update is called once per frame
     float lastPress = 0;
     float startTime = 0;
-
-    void Update()
-    {
+    
+    void Update() {
         startTime += Time.deltaTime;
         bool keyPressed = false;
         foreach (int code in Enum.GetValues(typeof(KeyCode)))
@@ -32,44 +30,52 @@ public class EndScreenManager : MonoBehaviour
                     || Input.GetKeyDown(KeyCode.DownArrow)
                     || Input.GetKeyDown(KeyCode.LeftArrow)
                     || Input.GetKeyDown(KeyCode.RightArrow)
+                    || Input.GetKeyDown(KeyCode.Mouse0)
+                    || Input.GetKeyDown(KeyCode.Mouse1)
+                    || Input.GetKeyDown(KeyCode.Mouse2)
+                    || Input.GetKeyDown(KeyCode.Mouse3)
                     )
                 )
             {
                 keyPressed = true;
             }
         }
-        if (keyPressed && startTime > 0.5)
+        if(keyPressed && startTime > 0.5)
         {
-            switch (menuPosition)
+            switch(menuPosition)
             {
                 case 0:
-                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("Game");
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
+                    SceneManager.LoadScene("Scenes/Story");
                     break;
                 case 1:
-                    GameObject.Find("soundscript").GetComponent<PlaySound>().playClip();
-                    SceneManager.LoadScene("MusicSelection");
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
+                    SceneManager.LoadScene("Scenes/Credits");
+                    break;
+                case 2:
+                    GameObject.Find("PlaySounds").GetComponent<PlaySound>().playClip();
+                    Application.Quit();
                     break;
             }
         }
         lastPress += Time.deltaTime;
         if (lastPress > 0.1 && (
-            Input.GetAxis("Vertical") < -0.5 ||
+            Input.GetAxis("Vertical") < -0.5 || 
             Input.GetKey(KeyCode.UpArrow)))
         {
             lastPress = 0;
             menuPosition -= 1;
             if (menuPosition < 0)
             {
-                menuPosition = MenuButtons.Count - 1;
+                menuPosition = 0;
             }
             changeSelect = true;
         }
         else if (lastPress > 0.1 && (
-            Input.GetAxis("Vertical") > 0.5 ||
+            Input.GetAxis("Vertical") > 0.5 || 
             Input.GetKey(KeyCode.DownArrow)))
         {
-            menuPosition = (menuPosition + 1) % MenuButtons.Count;
+            menuPosition = Mathf.Min(menuPosition + 1, MenuButtons.Count-1);
             lastPress = 0;
             changeSelect = true;
         }

@@ -31,7 +31,7 @@ public class CreditsManager : MonoBehaviour {
         }
         if(keyPressed)
         {
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Scenes/Menu");
         }
     }
 }

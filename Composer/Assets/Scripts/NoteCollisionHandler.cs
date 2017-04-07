@@ -18,7 +18,7 @@ public class NoteCollisionHandler : MonoBehaviour
             
             if (GameManager.NumHearts == 0)
             {
-                SceneManager.LoadScene("Lose");
+                SceneManager.LoadScene("Scenes/Lose");
                 
             }
             if (GameManager.NumHearts == 2)
