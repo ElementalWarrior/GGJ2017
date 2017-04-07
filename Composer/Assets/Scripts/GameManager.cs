@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class GameManager : MonoBehaviour {
 
@@ -22,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager _instance;
     public bool IsPaused = false;
     public GameObject PauseScreen;
+    private bool AltDown = false;
     // Use this for initialization
     void Start () {
         NumHearts = 3;
@@ -65,7 +67,19 @@ public class GameManager : MonoBehaviour {
         {
             return;
         }
-
+        
+        if((Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt)))
+        {
+            AltDown = true;
+        }
+        if ((Input.GetKeyUp(KeyCode.LeftAlt) || Input.GetKeyUp(KeyCode.RightAlt)))
+        {
+            AltDown = false;
+        }
+        if(IsPaused && Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Scenes/MusicSelection");
+        }
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (IsPaused)
@@ -75,9 +89,13 @@ public class GameManager : MonoBehaviour {
             {
                 Pause();
             }
-        } else if ((Input.GetKeyDown(KeyCode.LeftAlt) || Input.GetKeyDown(KeyCode.RightAlt)) && Input.GetKeyDown(KeyCode.Tab)) {
-            Pause();
-        } else if (Input.GetKeyDown(KeyCode.LeftArrow)
+        }
+        else if (AltDown && Input.GetKeyDown(KeyCode.Q))
+        {
+            EditorApplication.isPlaying = false;
+            Application.Quit();
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow)
          || (Input.GetAxis("Horizontal") < -0.5 && deltaLeft > 0.2)
          )// || Input.GetAxis("Horizontal") < -0.5)
         {
