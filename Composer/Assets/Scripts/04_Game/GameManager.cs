@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITYEDITOR
 using UnityEditor;
+#endif
 
 public class GameManager : MonoBehaviour {
 
@@ -92,7 +94,9 @@ public class GameManager : MonoBehaviour {
         }
         else if (AltDown && Input.GetKeyDown(KeyCode.Q))
         {
+#if UNITYEDITOR
             EditorApplication.isPlaying = false;
+#endif
             Application.Quit();
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow)
@@ -123,7 +127,7 @@ public class GameManager : MonoBehaviour {
     }
     public void OnApplicationFocus(bool focus)
     {
-        if (!focus)
+        if (!focus && SceneManager.GetActiveScene().name == "Game")
         {
             Pause();
         }
