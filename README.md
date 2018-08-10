@@ -2,7 +2,7 @@
 
 Submission for Global Game Jam 2017
 
-Game to cancel our bad notes in a symphony. Built on Unity, supported gamepads. 3 day project from a team of three
+You the composer must cancel out bad notes in a symphony. Built on Unity, supported gamepads. 3 day project from a team of three
 
 https://globalgamejam.org/2017/games/composer
 
